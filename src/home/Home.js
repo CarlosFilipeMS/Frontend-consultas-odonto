@@ -10,15 +10,15 @@ function Home() {
         <h1 className="mb-4">Sistema de Consultas</h1>
         <p className="text-muted">Gerencie pacientes, dentistas e consultas de forma simples e eficiente.</p>
         <div className="d-grid gap-3 mt-3">
-          <button className="btn btn-primary p-3" onClick={() => navigate("/cadastro-paciente")}>
-            🏥 Cadastrar Paciente
+          <button className="btn btn-primary p-3" onClick={() => navigate("/pacientes")}>
+            👥 Pacientes
           </button>
-          <button className="btn btn-secondary p-3">🦷 Cadastrar Dentista</button>
-          <button className="btn btn-success p-3">📅 Marcar Consulta</button>
-          <button className="btn btn-info p-3 text-white" onClick={() => navigate("/exibir-pacientes")}>
-            👥 Exibir Pacientes
+          <button className="btn btn-secondary p-3" onClick={() => {
+              navigate("/dentistas");
+            }}>
+            🦷 Dentistas
           </button>
-          <button className="btn btn-dark p-3">📄 Exibir Consultas</button>
+          <button className="btn btn-success p-3" onClick={() => navigate("/consultas")}>📅 Consultas</button>
         </div>
       </div>
     </div>
