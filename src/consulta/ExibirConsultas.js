@@ -15,7 +15,7 @@ function ExibirConsultas() {
     async function fetchConsultas() {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:8080/consultas");
+        const response = await fetch("https://web-production-e39ab.up.railway.app/consultas");
         if (!response.ok) throw new Error("Erro ao buscar consultas");
         let data = await response.json();
 
@@ -70,7 +70,7 @@ function ExibirConsultas() {
   const handleDelete = async (id) => {
     if (window.confirm("Você tem certeza que deseja deletar essa consulta?")) {
       try {
-        const response = await fetch(`http://localhost:8080/consultas/${id}`, {
+        const response = await fetch(`https://web-production-e39ab.up.railway.app/consultas/${id}`, {
           method: "DELETE",
         });
         if (!response.ok) throw new Error("Erro ao deletar consulta");

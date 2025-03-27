@@ -12,7 +12,7 @@ function EditarConsulta() {
   useEffect(() => {
     async function fetchConsulta() {
       try {
-        const response = await fetch(`http://localhost:8080/consultas/${id}`);
+        const response = await fetch(`https://web-production-e39ab.up.railway.app/consultas/${id}`);
         if (!response.ok) throw new Error("Erro ao buscar consulta");
         const data = await response.json();
         setConsulta(data);
@@ -29,7 +29,7 @@ function EditarConsulta() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:8080/consultas/${id}`, {
+      const response = await fetch(`https://api-consultas-odonto.vercel.app/consultas/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

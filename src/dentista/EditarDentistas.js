@@ -10,7 +10,7 @@ function EditarDentista() {
   useEffect(() => {
     async function fetchDentista() {
       try {
-        const response = await fetch(`http://localhost:8080/dentistas/${id}`);
+        const response = await fetch(`https://web-production-e39ab.up.railway.app/dentistas/${id}`);
         if (!response.ok) throw new Error("Erro ao buscar dentista");
         const data = await response.json();
         setNome(data.nome);
@@ -25,7 +25,7 @@ function EditarDentista() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch(`http://localhost:8080/dentistas/${id}`, {
+    const response = await fetch(`https://web-production-e39ab.up.railway.app/dentistas/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

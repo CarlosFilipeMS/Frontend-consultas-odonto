@@ -11,7 +11,7 @@ function MarcarConsulta() {
   useEffect(() => {
     async function fetchDentistas() {
       try {
-        const response = await fetch('http://localhost:8080/dentistas');
+        const response = await fetch('https://web-production-e39ab.up.railway.app/dentistas');
         const data = await response.json();
         setDentistas(data);
       } catch (error) {
@@ -25,7 +25,7 @@ function MarcarConsulta() {
   const buscarPacientePorCpf = async (cpf) => {
     if (cpf.length === 11) {
       try {
-        const response = await fetch(`http://localhost:8080/pacientes`);
+        const response = await fetch(`https://web-production-e39ab.up.railway.app/pacientes`);
         const data = await response.json();
   
         console.log("Resposta da API:", data); // Debug: Verificar a resposta
@@ -76,7 +76,7 @@ function MarcarConsulta() {
     };
 
     try {
-      const response = await fetch('http://localhost:8080/consultas', {
+      const response = await fetch('https://web-production-e39ab.up.railway.app/consultas', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(consultaData),

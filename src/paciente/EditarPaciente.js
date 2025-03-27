@@ -12,7 +12,7 @@ function EditarPaciente() {
   useEffect(() => {
     async function fetchPaciente() {
       try {
-        const response = await fetch(`http://localhost:8080/pacientes/${id}`);
+        const response = await fetch(`https://web-production-e39ab.up.railway.app/pacientes/${id}`);
         if (!response.ok) throw new Error("Erro ao buscar paciente");
         const data = await response.json();
         setNome(data.nome);
@@ -30,7 +30,7 @@ function EditarPaciente() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch(`http://localhost:8080/pacientes/${id}`, {
+    const response = await fetch(`https://web-production-e39ab.up.railway.app/pacientes/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

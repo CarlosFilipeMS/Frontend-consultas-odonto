@@ -9,7 +9,7 @@ function CadastroPaciente() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch('http://localhost:8080/pacientes', {
+    const response = await fetch('https://web-production-e39ab.up.railway.app/pacientes', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

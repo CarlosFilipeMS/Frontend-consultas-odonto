@@ -11,7 +11,7 @@ function ExibirPacientes() {
   useEffect(() => {
     async function fetchPacientes() {
       try {
-        const response = await fetch("http://localhost:8080/pacientes");
+        const response = await fetch("https://web-production-e39ab.up.railway.app/pacientes");
         if (!response.ok) throw new Error("Erro ao buscar pacientes");
         const data = await response.json();
         setPacientes(data);
@@ -27,7 +27,7 @@ function ExibirPacientes() {
     if (!confirmDelete) return;
 
     try {
-      const response = await fetch(`http://localhost:8080/pacientes/${id}`, { method: "DELETE" });
+      const response = await fetch(`https://web-production-e39ab.up.railway.app/pacientes/${id}`, { method: "DELETE" });
       if (!response.ok) throw new Error("Erro ao deletar paciente");
 
       setPacientes(pacientes.filter((paciente) => paciente.id !== id));

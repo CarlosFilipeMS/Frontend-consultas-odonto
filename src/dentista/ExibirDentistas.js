@@ -14,7 +14,7 @@ function ExibirDentistas() {
   useEffect(() => {
     async function fetchDentistas() {
       try {
-        const response = await fetch("http://localhost:8080/dentistas");
+        const response = await fetch("https://web-production-e39ab.up.railway.app/dentistas");
         if (!response.ok) throw new Error("Erro ao buscar dentistas");
         const data = await response.json();
         setDentistas(data);
@@ -56,7 +56,7 @@ function ExibirDentistas() {
 
   const handleDelete = async (id) => {
     if (window.confirm("Tem certeza que deseja deletar este dentista?")) {
-      const response = await fetch(`http://localhost:8080/dentistas/${id}`, {
+      const response = await fetch(`https://web-production-e39ab.up.railway.app/dentistas/${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {
