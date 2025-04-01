@@ -28,8 +28,10 @@ function EditarConsulta() {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
+    console.log("Botão foi clicado!");
+  
     try {
-      const response = await fetch(`https://api-consultas-odonto.vercel.app/consultas/${id}`, {
+      const response = await fetch(`https://web-production-e39ab.up.railway.app/consultas/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -43,11 +45,16 @@ function EditarConsulta() {
           dataHora,
         }),
       });
+  
+      console.log("Resposta do servidor:", response);
+  
       if (!response.ok) throw new Error("Erro ao atualizar consulta");
+  
       alert("Consulta atualizada com sucesso!");
       navigate("/consultas");
     } catch (error) {
-      console.error(error);
+      console.error("Erro:", error);
+      alert("Erro ao atualizar a consulta: " + error.message);
     }
   };
 

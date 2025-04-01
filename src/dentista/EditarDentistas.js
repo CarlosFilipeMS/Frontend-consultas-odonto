@@ -35,7 +35,7 @@ function EditarDentista() {
 
     if (response.ok) {
       alert("Dentista atualizado com sucesso!");
-      navigate("/exibir-dentistas"); // Redireciona para a lista de dentistas
+      navigate("/dentistas"); // Redireciona para a lista de dentistas
     } else {
       alert("Erro ao atualizar dentista");
     }

@@ -45,7 +45,7 @@ function EditarPaciente() {
 
     if (response.ok) {
       alert("Paciente atualizado com sucesso!");
-      navigate("/exibir-pacientes");
+      navigate("/pacientes");
     } else {
       alert("Erro ao atualizar paciente.");
     }
